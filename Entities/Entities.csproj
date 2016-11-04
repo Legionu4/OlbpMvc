@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4E262DF7-A3EC-4463-9A20-1F2E7D75BC22}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Entities</RootNamespace>
+    <AssemblyName>Entities</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbrilBarcodes.cs" />
+    <Compile Include="AbrilBarcodeSetting.cs" />
+    <Compile Include="AdditionalData.cs" />
+    <Compile Include="ArmConfig.cs" />
+    <Compile Include="ArmFieldConfigs.cs" />
+    <Compile Include="ArmFieldNames.cs" />
+    <Compile Include="Buildings.cs" />
+    <Compile Include="Configuration.cs" />
+    <Compile Include="Counters.cs" />
+    <Compile Include="Cpz.cs" />
+    <Compile Include="DescriptionIds.cs" />
+    <Compile Include="Districts.cs" />
+    <Compile Include="ExternalService.cs" />
+    <Compile Include="ExtServiceUser.cs" />
+    <Compile Include="ExtUserToOlbpUser.cs" />
+    <Compile Include="FilesStats.cs" />
+    <Compile Include="FilesStatsTmp.cs" />
+    <Compile Include="FinanceSetttings.cs" />
+    <Compile Include="Indexes.cs" />
+    <Compile Include="LocalisationToCity.cs" />
+    <Compile Include="NewPaymentsTmp.cs" />
+    <Compile Include="olbp_model.cs" />
+    <Compile Include="olbp_model.Designer.cs" />
+    <Compile Include="Organisations.cs" />
+    <Compile Include="OrgToCity.cs" />
+    <Compile Include="Payers.cs" />
+    <Compile Include="Payments.cs" />
+    <Compile Include="paymentsedit.cs" />
+    <Compile Include="paymentstmp.cs" />
+    <Compile Include="PaymentsArchive.cs" />
+    <Compile Include="PaymentBarcodes.cs" />
+    <Compile Include="PlannerConfigs.cs" />
+    <Compile Include="PlannerLog.cs" />
+    <Compile Include="plats.cs" />
+    <Compile Include="platstmp.cs" />
+    <Compile Include="plat_templates.cs" />
+    <Compile Include="PlatTemplateFields.cs" />
+    <Compile Include="PlAccounts.cs" />
+    <Compile Include="PlCity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PsopParams.cs" />
+    <Compile Include="ReducedPayers.cs" />
+    <Compile Include="reestrs.cs" />
+    <Compile Include="reestrstmp.cs" />
+    <Compile Include="ReestrsTemplates.cs" />
+    <Compile Include="Regions.cs" />
+    <Compile Include="ReportDefaults.cs" />
+    <Compile Include="resendtype.cs" />
+    <Compile Include="RpayerLinks.cs" />
+    <Compile Include="servgroup.cs" />
+    <Compile Include="ServGroupLinks.cs" />
+    <Compile Include="services.cs" />
+    <Compile Include="ServicesToCity.cs" />
+    <Compile Include="streets.cs" />
+    <Compile Include="tarifs.cs" />
+    <Compile Include="templates.cs" />
+    <Compile Include="TemplatesType.cs" />
+    <Compile Include="template_fields.cs" />
+    <Compile Include="template_field_aliases.cs" />
+    <Compile Include="TemplateFunc.cs" />
+    <Compile Include="TempFieldToFunc.cs" />
+    <Compile Include="terminals.cs" />
+    <Compile Include="TerminalPayments.cs" />
+    <Compile Include="Users.cs" />
+    <Compile Include="UsersToServiceGroups.cs" />
+    <Compile Include="user_to_index.cs" />
+    <Compile Include="UserToSpeedCodes.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,128 @@
+﻿@using Olbp.Controllers
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ОЛБП - @ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top" hidden="@(!Request.IsAuthenticated)">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Он-лайн платежі", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+
+            <div class="container navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Довідники<b class="caret"></b></a>
+                        <ul class="dropdown-menu multi-level">
+                            <li class="dropdown-submenu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Адреси та індекси</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Райони</a></li>
+                                    <li><a href="#">Міста та села</a></li>
+                                    <li><a href="#">Вулиці</a></li>
+                                    <li><a href="#">Будинки</a></li>
+                                    <li><a href="#">Індекси ВЗ</a></li>
+                                    <li><a href="#">Термінали</a></li>
+                                    <li><a href="#">ЦПЗ</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Зведення</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Платники</a></li>
+                                    <li><a href="#">Картки платників</a></li>
+                                    <li><a href="#">Коди районів</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Організації та Користувачі</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="@Url.Action("GetAllOrganisations","Organisations")"><span class="glyphicon glyphicon-star"></span> Організації</a></li>
+                                    <li><a href="#">Групи послуг</a></li>
+                                    <li><a href="#">Комбіновані тарифи</a></li>
+                                    <li><a href="#">Швидкі коди</a></li>
+                                    <li><a href="#">Користувачі</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Зовнішні організації</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Налаштування зовнішніх сервісів</a></li>
+                                    <li><a href="#">Налаштування зовнішніх користувачів</a></li>
+                                    <li><a href="#">Налаштування організацій-посередників</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Робота з даними<b class="caret"></b></a>
+                        <ul class="dropdown-menu multi-level">
+                            <li class="dropdown-submenu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Платники</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Завантаження даних</a></li>
+                                    <li><a href="#">Редагування</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Реєстра</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Налаштування</a></li>
+                                    <li><a href="#">Вивантаження</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Платіжні доручення</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Налаштування</a></li>
+                                    <li><a href="#">Платіжні доручення</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Об'єднання файлів</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">DBF</a></li>
+                                    <li><a href="#">TXT</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#" class="dropdown">Вивантаження в МППЗ</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        @Html.ActionLink("Платежі", "NotImplementedPage", "NotImplementedPage")
+                    </li>
+
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+
+        <footer class="navbar-fixed-bottom">
+            <p> &copy; @DateTime.Now.Year - Табун диких програмістів)))</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

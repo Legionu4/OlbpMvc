@@ -1,0 +1,329 @@
+﻿@model WebApplication9.Models.Organisations
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Organisations</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nomenklature)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nomenklature)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Edrpou)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Edrpou)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Account)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Account)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mfo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mfo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bankname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bankname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tarif)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tarif)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Percent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Percent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Minsum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Minsum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Enabled)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Enabled)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CityId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CityId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Unconfirmed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Unconfirmed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contract_Num)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contract_Num)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contract_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contract_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResendType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResendType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CanSavePayer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CanSavePayer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CanSaveAccount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CanSaveAccount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FileFolder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FileFolder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExportEveryday)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExportEveryday)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsMounthProfit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsMounthProfit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsArchive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsArchive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReceiverGroup)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReceiverGroup)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PayersCheck)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PayersCheck)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsUsedGeneralTemplate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsUsedGeneralTemplate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LockedTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LockedTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Additional)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Additional)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UseAdditionalyService)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UseAdditionalyService)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ParentId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ParentId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Use_AutoDefaults)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Use_AutoDefaults)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReducedTypeId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReducedTypeId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Visibility)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Visibility)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocationId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocationId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReceivingTypeId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReceivingTypeId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WebserviceId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WebserviceId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateCreate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateCreate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomenklatureComission)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomenklatureComission)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExtServiceId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExtServiceId)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

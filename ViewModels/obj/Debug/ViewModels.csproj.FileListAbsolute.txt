@@ -1,0 +1,14 @@
+D:\ARM\OLBP\ViewModels\bin\Debug\ViewModels.dll
+D:\ARM\OLBP\ViewModels\bin\Debug\ViewModels.pdb
+D:\ARM\OLBP\ViewModels\bin\Debug\Entities.dll
+D:\ARM\OLBP\ViewModels\bin\Debug\Entities.pdb
+D:\ARM\OLBP\ViewModels\obj\Debug\ViewModels.csprojResolveAssemblyReference.cache
+D:\ARM\OLBP\ViewModels\obj\Debug\ViewModels.dll
+D:\ARM\OLBP\ViewModels\obj\Debug\ViewModels.pdb
+D:\ARM\git\OlbpMvc\ViewModels\bin\Debug\ViewModels.dll
+D:\ARM\git\OlbpMvc\ViewModels\bin\Debug\ViewModels.pdb
+D:\ARM\git\OlbpMvc\ViewModels\bin\Debug\Entities.dll
+D:\ARM\git\OlbpMvc\ViewModels\bin\Debug\Entities.pdb
+D:\ARM\git\OlbpMvc\ViewModels\obj\Debug\ViewModels.csprojResolveAssemblyReference.cache
+D:\ARM\git\OlbpMvc\ViewModels\obj\Debug\ViewModels.dll
+D:\ARM\git\OlbpMvc\ViewModels\obj\Debug\ViewModels.pdb
