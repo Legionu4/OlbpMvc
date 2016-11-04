@@ -6,6 +6,9 @@ using System.Web.Mvc;
 using Olbp.Models;
 using ViewModels;
 using PagedList;
+using WebApplication9.Models;
+using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace Olbp.Controllers
 {
@@ -36,12 +39,25 @@ namespace Olbp.Controllers
 
         public ActionResult GetOneOrganisation(int id)
         {
-            var content = Context.Organisations.Where(x => x.Id == id).ToList()[0];
+            Organisations content = Context.Organisations.Where(x => x.Id == id).ToList()[0];
             ViewBag.Title = content.Name;
             //var view = new SingleOrgViewModel();
             //view.Organisation = Context.Organisations.Where(x => x.Id == id).ToList()[0];
 
             return View(content);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> SaveChanges(Organisations organisations)
+        {
+            if (ModelState.IsValid)
+            {
+                Context.Entry(organisations).State = EntityState.Modified;
+                await Context.SaveChangesAsync();
+                return RedirectToAction("GetOneOrganisation", new { id = organisations.Id });
+            }
+            return View(organisations);
         }
     }
 }

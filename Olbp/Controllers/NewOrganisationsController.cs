@@ -48,7 +48,8 @@ namespace Olbp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,Name,Nomenklature,Edrpou,Account,Mfo,Bankname,Tarif,Percent,Minsum,Enabled,CityId,UserId,Unconfirmed,Contract_Num,Contract_Date,ResendType,CanSavePayer,CanSaveAccount,FileFolder,ExportEveryday,IsMounthProfit,IsArchive,ReceiverGroup,PayersCheck,IsUsedGeneralTemplate,LockedTime,Additional,UseAdditionalyService,ParentId,Use_AutoDefaults,ReducedTypeId,Visibility,LocationId,ReceivingTypeId,WebserviceId,DateCreate,NomenklatureComission,ExtServiceId")] Organisations organisations)
+        //public async Task<ActionResult> Create([Bind(Include = "Id,Name,Nomenklature,Edrpou,Account,Mfo,Bankname,Tarif,Percent,Minsum,Enabled,CityId,UserId,Unconfirmed,Contract_Num,Contract_Date,ResendType,CanSavePayer,CanSaveAccount,FileFolder,ExportEveryday,IsMounthProfit,IsArchive,ReceiverGroup,PayersCheck,IsUsedGeneralTemplate,LockedTime,Additional,UseAdditionalyService,ParentId,Use_AutoDefaults,ReducedTypeId,Visibility,LocationId,ReceivingTypeId,WebserviceId,DateCreate,NomenklatureComission,ExtServiceId")] Organisations organisations)
+        public async Task<ActionResult> Create(Organisations organisations)
         {
             if (ModelState.IsValid)
             {
