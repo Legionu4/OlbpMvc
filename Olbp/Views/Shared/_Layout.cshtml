@@ -116,8 +116,22 @@
     <div class="container body-content">
         @RenderBody()
 
+
+        @*<div class="pull-right">
+            <a id="back-to-top" href="#" class="btn btn-primary" role="button" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
+        </div>*@
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="text-right">
+                    <a id="back-to-top" href="#" class="btn btn-block btn-sm btn-primary hidden" role="button" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
+                </div>
+            </div>
+        </div>
+
         <footer class="navbar-fixed-bottom">
             <p> &copy; @DateTime.Now.Year - Табун диких програмістів)))</p>
+
         </footer>
     </div>
 

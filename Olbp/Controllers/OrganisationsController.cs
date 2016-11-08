@@ -22,13 +22,12 @@ namespace Olbp.Controllers
 
         //
         // GET: /Organisations/
-        public ActionResult GetAllOrganisations(int? page)
+        public async Task<ActionResult> GetAllOrganisations(int? page)
         {
             ViewBag.Title = "Організації";
-            int itemsPerPage = 10;
-            //var view = new OrganisationsViewModel();
+            int itemsPerPage = 50;
 
-            var list = Context.Organisations.OrderBy(x => x.Name).ToList();
+            var list = await Task.Run(() => Context.Organisations.OrderBy(x => x.Name).ToList());
 
             var pageNumber = page ?? 1;
             var onePageOfItem = list.ToPagedList(pageNumber, itemsPerPage);
@@ -37,19 +36,17 @@ namespace Olbp.Controllers
             return View();
         }
 
-        public ActionResult GetOneOrganisation(int id)
+        public async Task<ActionResult> GetOneOrganisation(int id)
         {
-            Organisations content = Context.Organisations.Where(x => x.Id == id).ToList()[0];
+            Organisations content = await Task.Run(() => Context.Organisations.Where(x => x.Id == id).ToList()[0]);
             ViewBag.Title = content.Name;
-            //var view = new SingleOrgViewModel();
-            //view.Organisation = Context.Organisations.Where(x => x.Id == id).ToList()[0];
 
             return View(content);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> SaveChanges(Organisations organisations)
+        public async Task<ActionResult> GetOneOrganisation(Organisations organisations)
         {
             if (ModelState.IsValid)
             {
