@@ -221,15 +221,13 @@
                 </div>
                 <div class="modal-footer">
                     <input contextmenu="1" style="float:left" type="submit" name="modalCommand" value="Ok" class="btn btn-primary" />
-                    <input type="submit" name="modalCommand" value="Cancel" class="btn btn-primary" />
+                    @*<input type="submit" name="modalCommand" value="Cancel" class="btn btn-primary" />*@
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
 }
-
-
-
 
 <div>
     @Html.ActionLink("Back to List", "GetAllOrganisations")
