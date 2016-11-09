@@ -25,7 +25,7 @@ namespace Olbp.Controllers
         public async Task<ActionResult> GetAllOrganisations(int? page)
         {
             ViewBag.Title = "Організації";
-            int itemsPerPage = 12;
+            int itemsPerPage = 20;
 
             var list = await Task.Run(() => Context.Organisations.OrderBy(x => x.Name).ToList());
 
