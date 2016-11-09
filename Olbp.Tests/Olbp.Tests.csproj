@@ -92,6 +92,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{4e262df7-a3ec-4463-9a20-1f2e7d75bc22}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Olbp\Olbp.csproj">
       <Project>{2141645B-9F4D-4D16-AB84-A0334CF6B07C}</Project>
       <Name>Olbp</Name>

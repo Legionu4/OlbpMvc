@@ -215,3 +215,7 @@ button, input, optgroup, select, textarea {
 
 /*-------------------------------*/
 
+.modal {
+     overflow: hidden;
+    position: center;
+}

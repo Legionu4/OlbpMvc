@@ -25,7 +25,7 @@ namespace Olbp.Controllers
         public async Task<ActionResult> GetAllOrganisations(int? page)
         {
             ViewBag.Title = "Організації";
-            int itemsPerPage = 50;
+            int itemsPerPage = 12;
 
             var list = await Task.Run(() => Context.Organisations.OrderBy(x => x.Name).ToList());
 
@@ -46,15 +46,36 @@ namespace Olbp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> GetOneOrganisation(Organisations organisations)
+        public async Task<ActionResult> GetOneOrganisation(Organisations organisations, string command = "", string modalCommand = "")
         {
-            if (ModelState.IsValid)
+            if (command.Equals("Save"))
             {
-                Context.Entry(organisations).State = EntityState.Modified;
-                await Context.SaveChangesAsync();
-                return RedirectToAction("GetOneOrganisation", new { id = organisations.Id });
+                if (ModelState.IsValid)
+                {
+                    Context.Entry(organisations).State = EntityState.Modified;
+                    await Context.SaveChangesAsync();
+                    return RedirectToAction("GetOneOrganisation", new { id = organisations.Id });
+                }
+                return View(organisations);
             }
-            return View(organisations);
+            else if (command.Equals("Exit"))
+            {
+                return RedirectToAction("GetAllOrganisations");
+            }
+
+            if (command.Equals("Delete") || modalCommand.ToUpper().Equals("OK"))
+                DeleteOrganisation(organisations);
+            if (modalCommand.ToUpper().Equals("CANCEL"))
+                return RedirectToAction("GetOneOrganisation", new { id = organisations.Id });
+
+            return RedirectToAction("GetAllOrganisations");
+        }
+
+        private void DeleteOrganisation(Organisations organisations)
+        {
+            Context.Organisations.Attach(organisations);
+            Context.Organisations.Remove(organisations);
+            Context.SaveChanges();
         }
     }
 }

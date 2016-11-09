@@ -188,12 +188,53 @@
 
     </div>
     <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Save" class="btn btn-primary" />
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" name="command" value="Save" class="btn btn-primary" />
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" name="command" value="Delete" class="btn btn-primary" data-toggle="modal" data-target=".DeleteBtn" />
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" name="command" value="Exit" class="btn btn-primary" />
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="modal fade DeleteBtn">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header text-center">Hello!</div>
+                <div class="modal-body text-center">
+                    Ви точно хочете видалити організацію
+                    <div>@ViewBag.Title</div>
+                </div>
+                <div class="modal-footer">
+                    <input contextmenu="1" style="float:left" type="submit" name="modalCommand" value="Ok" class="btn btn-primary" />
+                    <input type="submit" name="modalCommand" value="Cancel" class="btn btn-primary" />
+                </div>
+            </div>
         </div>
     </div>
 }
 
+
+
+
 <div>
     @Html.ActionLink("Back to List", "GetAllOrganisations")
 </div>
+
+
+
+
