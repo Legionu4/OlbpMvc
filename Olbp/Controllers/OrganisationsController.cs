@@ -54,7 +54,7 @@ namespace Olbp.Controllers
                 {
                     Context.Entry(organisations).State = EntityState.Modified;
                     await Context.SaveChangesAsync();
-                    return RedirectToAction("GetOneOrganisation", new { id = organisations.Id });
+                    ViewBag.Title = organisations.Name;
                 }
                 return View(organisations);
             }

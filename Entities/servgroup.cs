@@ -11,23 +11,20 @@ namespace WebApplication9.Models
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class ServGroup
     {
         public ServGroup()
         {
-           // this.ArmFieldConfigs = new HashSet<ArmFieldConfigs>();
-            this.localisation_to_city = new HashSet<LocalisationToCity>();
-            this.servgroup_links = new HashSet<ServGroupLinks>();
+            // this.ArmFieldConfigs = new HashSet<ArmFieldConfigs>();
+            servgroup_links = new HashSet<ServGroupLinks>();
         }
-    
+
         public int id { get; set; }
         public string name { get; set; }
         public bool print_all_rekv { get; set; }
         public string nomenklature_comission { get; set; }
 
-        public virtual ICollection<ArmFieldConfigs> ArmFieldConfigs { get; set; }
-        public virtual ICollection<LocalisationToCity> localisation_to_city { get; set; }
         public virtual ICollection<ServGroupLinks> servgroup_links { get; set; }
     }
 }

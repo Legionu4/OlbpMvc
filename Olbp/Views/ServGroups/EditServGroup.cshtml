@@ -1,0 +1,79 @@
+﻿@model WebApplication9.Models.ServGroup
+
+@{
+    
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <h4 class="text-center">@ViewBag.Title</h4>
+    <hr />
+    <table class="table table-condensed">
+        <tbody>
+            <tr>
+                <td>Назва</td>
+                <td>
+                    @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>Друкувати все</td>
+                <td>
+                    @Html.EditorFor(model => model.print_all_rekv)
+                    @Html.ValidationMessageFor(model => model.print_all_rekv, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>Номенклатура комісії</td>
+                <td>
+                    @Html.EditorFor(model => model.nomenklature_comission, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.nomenklature_comission, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="form-group">
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" name="command" value="Save" class="btn btn-primary" />
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" name="command" value="Delete" class="btn btn-primary" data-toggle="modal" data-target=".DeleteBtn" />
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" name="command" value="Exit" class="btn btn-primary" />
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="modal fade DeleteBtn">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header text-center">Hello!</div>
+                <div class="modal-body text-center">
+                    Ви дійсно хочете видалити групу послуг
+                    <div>@ViewBag.Title</div>
+                </div>
+                <div class="modal-footer">
+                    <input contextmenu="1" style="float:left" type="submit" name="modalCommand" value="Ok" class="btn btn-primary" />
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"><span class="glyphicon glyphicon-remove" /></button>
+                </div>
+            </div>
+        </div>
+    </div>
+}

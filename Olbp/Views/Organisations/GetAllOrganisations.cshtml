@@ -41,30 +41,31 @@
                                         @Html.ActionLink("Edit", "GetOneOrganisation", "Organisations", new { id = modelitem.Id }, new { @class = "btn btn-primary" })
                                     </td>
                                     <td class="col-md-2">
-                                        <button class="btn btn-primary" data-toggle="modal" data-target=".@modelitem.Id" >Fast Watch</button>
+                                        <button class="btn btn-primary" data-toggle="modal" data-target=".@modelitem.Id">Fast Watch</button>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                </div>
 
-                <div class="modal fade @modelitem.Id">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header text-center">Hello!</div>
-                            <div class="modal-body text-center">
-                                <div>Р.р. @modelitem.Account</div>
-                                <div>ЄДРПОУ @modelitem.Edrpou</div>
-                                <div>МФО @modelitem.Mfo</div>
-                            </div>
-                            <div class="modal-footer text-center">
-                                <button style="display: block; width: 100%;" type="submit" name="modalCommand" value="Close" class="btn btn-toolbar" data-dismiss="modal" >
-                                    Close
-                                </button>
+                    <div class="modal fade @modelitem.Id">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header text-center">@modelitem.Name</div>
+                                <div class="modal-body text-center">
+                                    <div>Р.р. @modelitem.Account</div>
+                                    <div>ЄДРПОУ @modelitem.Edrpou</div>
+                                    <div>МФО @modelitem.Mfo</div>
+                                </div>
+                                <div class="modal-footer text-center">
+                                    <button style="display: block; width: 100%;" type="submit" name="modalCommand" value="Close" class="btn btn-toolbar" data-dismiss="modal">
+                                        Close
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             }
         }

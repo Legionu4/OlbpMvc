@@ -181,13 +181,14 @@
     <Compile Include="Controllers\NewOrganisationsController.cs" />
     <Compile Include="Controllers\NotImplementedPageController.cs" />
     <Compile Include="Controllers\OrganisationsController.cs" />
+    <Compile Include="Controllers\ServGroupsController.cs" />
     <Compile Include="Filters\LogActionFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201611091638497_1.cs" />
-    <Compile Include="Migrations\201611091638497_1.Designer.cs">
-      <DependentUpon>201611091638497_1.cs</DependentUpon>
+    <Compile Include="Migrations\201611101144254_servGroup_1.cs" />
+    <Compile Include="Migrations\201611101144254_servGroup_1.Designer.cs">
+      <DependentUpon>201611101144254_servGroup_1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -269,6 +270,8 @@
     <Content Include="Views\NewOrganisations\Edit.cshtml" />
     <Content Include="Views\NewOrganisations\Index.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\ServGroups\ServGroupsAll.cshtml" />
+    <Content Include="Views\ServGroups\EditServGroup.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -292,8 +295,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201611091638497_1.resx">
-      <DependentUpon>201611091638497_1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611101144254_servGroup_1.resx">
+      <DependentUpon>201611101144254_servGroup_1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

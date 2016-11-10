@@ -1,0 +1,64 @@
+﻿@model WebApplication9.Models.ServGroup
+@{
+    ViewBag.Title = "ServGroupsAll";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using PagedList.Mvc;
+@using PagedList;
+
+<h2 class="text-center">Групи послуг</h2>
+<div class="text-left">
+    <div class="panel-group" id="collapse-group">
+        @if (ViewBag.OnePageOfServGroups.Count > 0)
+        {
+            foreach (var modelitem in ViewBag.OnePageOfServGroups)
+            {
+                @*<div class="panel panel-default">
+                        <div style="height:auto" class="panel-heading hoverDiv">
+                            <h4 class="panel-title text-center">
+                                @modelitem.name
+                                @Html.ActionLink("Edit", "EditServGroup", "ServGroups", new { id = modelitem.id }, new { @class = "btn btn-primary" })
+                            </h4>
+                        </div>
+                    </div>*@
+                <div class="panel panel-default">
+                    <div style="height:auto" class="panel-heading hoverDiv" data-toggle="collapse" data-parent="#collapse-group" href="#@modelitem.id">
+                        <h4 class="panel-title text-center">
+                            @modelitem.name
+                        </h4>
+                    </div>
+                    <divider></divider>
+                    <div id="@modelitem.id" class="panel-collapse collapse">
+                        <table class="table panel-body">
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-1">Назва</td>
+                                    <td class="col-md-2">@modelitem.name</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-1">Номенклатура комісії</td>
+                                    <td class="col-md-2">@modelitem.nomenklature_comission</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-1">Друкувати все</td>
+                                    <td class="col-md-2">@modelitem.print_all_rekv</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-1">
+                                        @Html.ActionLink("Edit", "EditServGroup", "ServGroups", new { id = modelitem.id }, new { @class = "btn btn-primary" })
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="jumbotron"><h1>Сорян, нічо нема</h1></div>
+        }
+    </div>
+    @Html.PagedListPager((IPagedList)ViewBag.OnePageOfServGroups, page => Url.Action("ServGroupsAll", new { page }), new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded })
+</div>
